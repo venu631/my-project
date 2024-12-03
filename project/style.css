@@ -1,0 +1,596 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling the blue navbar with only search bar */
+.navbar {
+    background-color: #1e73be; /* Blue color */
+    padding: 10px 15px; /* Reduced padding (top and bottom to 5px) */
+    text-align: right;
+    max-height: 70px; /* Optional: Set a maximum height if needed */
+}
+
+.navbar .search-container {
+    position: relative;
+    display: inline-block;
+    margin-left: auto; /* This pushes the search container to the right */
+    margin-right: 90px; /* Adjust this value to control the distance from the right */
+}
+
+.navbar input[type="text"] {
+    padding: 5px 30px 5px 10px; /* Adjust right padding for icon */
+    padding-right: 90px;
+    border: 1px solid #ccc; /* Border for rectangle effect */
+    border-radius: 20px; /* Set the border-radius for an oval shape */
+    width: 250px;
+    height: 30px; /* Adjust the height if needed */
+    background-color:  #e4e4e4; /* Add this background color */
+}
+
+.navbar .search-container i {
+    position: absolute;
+    right: 15px; /* Adjust position of icon */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999; /* Icon color */
+    pointer-events: none; /* Make sure the icon doesn't interfere with text input */
+}
+
+
+/* Content below the navbar */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Logo on the left side */
+.logo {
+    width: 300px;
+    padding-left: 100px;
+}
+
+/* Navigation links on the right side */
+.navbar-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.navbar-right a {
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.navbar-right :hover {
+    color: #ff0000;
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:black;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+.dropdown-content a {
+    color: #f9f9f9;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 0.25px solid rgba(255, 255, 255, 0.5);
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none; /* Remove the line after the last link */
+}
+
+
+/* Disable hover effect for dropdown links */
+.dropdown-content a:hover {
+    color: #f9f9f9; /* Keeps the color same on hover */
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Red section styling */
+.red-section {
+    background-color: red;
+    padding: 20px;
+    color: white;
+}
+
+.appoint-col {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.appoint-icon img {
+    margin-right: 10px;
+}
+
+.appoint-details h3, .appoint-details h4 {
+    margin: 0;
+}
+
+/* Red section styling */
+.red-section {
+    background-color:  #dd1f1f;
+    padding: 10px 20px; /* Reduced padding to decrease height (top/bottom padding is now 10px) */
+    color: white;
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Ensure even spacing between columns */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    max-height: 100px; /* Optional: Set a max height */
+    overflow: hidden; /* Optional: Hide overflow if content exceeds max height */
+}
+
+
+/* Each column inside red-section */
+.col-md-4 {
+    flex: 1; /* Make sure each column takes up equal space */
+    min-width: 250px; /* Set a minimum width for each column */
+    display: flex; /* Use flexbox within each column */
+    flex-direction: column; /* Arrange items vertically in each column */
+    align-items: center; /* Center items horizontally in each column */
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* Icon styling */
+.appoint-icon img {
+    margin-bottom: 15px; /* Space between image and text */
+    width: 50px; /* Set fixed width for icons */
+    height: auto; /* Keep aspect ratio */
+}
+
+/* Text content styling */
+.appoint-details {
+    text-align: center; /* Center the text */
+}
+
+/* Styling the headings inside appoint details */
+.appoint-details h3, .appoint-details h4 {
+    margin: 0;
+    padding: 5px 0;
+}
+
+/* Optional: Adding gap between the columns */
+.col-md-4 + .col-md-4 {
+    margin-left: 20px; /* Space between columns */
+}
+/* Styling the headings inside appoint details */
+.appoint-details h2, .appoint-details h4 {
+    margin: 0; /* Remove default margin */
+    padding: 3px 0; /* Optional: Adjust padding if needed to control the space */
+}
+
+/* Alternatively, you can target only the margin between h2 and h4 if needed: */
+.appoint-details h2 {
+    margin-bottom: 5px; /* Reduce the bottom margin of h2 */
+}
+
+.appoint-details h4 {
+    margin-top: 0; /* Remove the margin on top of h4 */
+}
+.red-section {
+    margin-bottom: 0; /* Remove bottom margin to remove gap */
+    padding-bottom: 0; /* Remove bottom padding if necessary */
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Slideshow images */
+.slide {
+    display: none; /* Hide all slides by default */
+    position: relative; /* Use relative positioning to keep layout */
+    width: 100%;
+    height: auto;
+}
+
+/* Make the first slide visible initially */
+.slide:first-child {
+    display: block;
+}
+
+/* Style for images */
+.slide-image {
+    width: calc(100% - 40px); /* Reduce the width to account for padding */
+    height: auto;
+    padding: 0 20px; /* 20px padding on both sides */
+    object-fit: cover;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------*/
+/* Blue section */
+/* Blue section */
+.blue-section {
+    background-color: #1e73be; /* Same blue color as navbar */
+    padding: 10px 15px; /* Reduced padding similar to navbar */
+    text-align: center;
+    width: 100%; /* Full width */
+    height: auto; /* Auto height to avoid overflow */
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    margin: 0; /* Remove any margin to avoid gaps */
+    box-sizing: border-box; /* Ensure padding is included in the element's width */
+}
+
+.blue-section h1 {
+    color: white; /* Ensure text is white */
+    font-weight: bold; /* Make the text bold */
+    font-size: 2em; /* Adjust font size */
+    margin: 0; /* Remove any margin */
+}
+
+/* Ensure the body and html have no overflow */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Optional: Remove any extra spacing between sections */
+.slideshow-container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+
+/* Slide images */
+.slide img {
+    display: block; /* Ensure the image displays properly */
+    width: 100%; /* Full width */
+    height: auto; /* Keep aspect ratio */
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Main container for all products */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 products per row */
+    gap: 20px; /* Space between product sections */
+    padding: 20px;
+}
+
+/* Individual product section */
+.product-section {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Image styling */
+.product-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Heading inside product section */
+.product-section h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Paragraph inside product section */
+.product-section p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Read More button */
+.read-more-btn {
+    background-color: #dd1f1f;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.read-more-btn:hover {
+    background-color: darkred;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 products per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .products-container {
+        grid-template-columns: 1fr; /* 1 product per row on very small screens */
+    }
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* Image grid container */
+.image-grid-container {
+    padding: 10px; /* Reduce padding around the container */
+    max-width: 80%; /* Adjust max-width to reduce the overall size */
+    margin: 0 auto; /* Center the container */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* First two rows have 6 columns */
+    gap: 15px; /* Reduce the gap between images */
+}
+
+/* Styling for the grid images */
+.grid-image {
+    width: 90%; /* Reduce the width of each image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    margin: 0 auto; /* Center the image within each grid cell */
+}
+
+
+.image-row {
+    display: contents; /* Ensure the images stay within the grid structure */
+}
+
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+    .image-grid-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 images per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .image-grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 images per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row on very small screens */
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------- */
+#page1 {
+    font-family: Arial, sans-serif; /* Optional font style */
+    padding: 40px 40px 40px 160px;  /* Keeps the same padding */
+    max-width: 1500px;              /* Keeps the same max-width */
+    font-size: 14px;                /* Decrease font size (adjust as needed) */
+    line-height: 1.8;               /* Adds space between lines (1.8 is a good value for readability) */
+}
+#page2 {
+    font-family: Arial, sans-serif; /* Optional font style */
+    padding: 40px 40px 40px 160px;  /* Keeps the same padding */
+    max-width: 1500px;              /* Keeps the same max-width */
+    font-size: 14px;                /* Decrease font size (adjust as needed) */
+    line-height: 1.8;               /* Adds space between lines (1.8 is a good value for readability) */
+}
+#page3 {
+    font-family: Arial, sans-serif; /* Optional font style */
+    padding: 40px 40px 40px 160px;  /* Keeps the same padding */
+    max-width: 1500px;              /* Keeps the same max-width */
+    font-size: 14px;                /* Decrease font size (adjust as needed) */
+    line-height: 1.8;               /* Adds space between lines (1.8 is a good value for readability) */
+}
+#page4 {
+    font-family: Arial, sans-serif; /* Optional font style */
+    padding: 40px 40px 40px 160px;  /* Keeps the same padding */
+    max-width: 1500px;              /* Keeps the same max-width */
+    font-size: 14px;                /* Decrease font size (adjust as needed) */
+    line-height: 1.8;               /* Adds space between lines (1.8 is a good value for readability) */
+}
+#page5 {
+    font-family: Arial, sans-serif; /* Optional font style */
+    padding: 40px 40px 40px 160px;  /* Keeps the same padding */
+    max-width: 1500px;              /* Keeps the same max-width */
+    font-size: 14px;                /* Decrease font size (adjust as needed) */
+    line-height: 1.8;               /* Adds space between lines (1.8 is a good value for readability) */
+}
+#page6 {
+    font-family: Arial, sans-serif; /* Optional font style */
+    padding: 40px 40px 40px 160px;  /* Keeps the same padding */
+    max-width: 1500px;              /* Keeps the same max-width */
+    font-size: 14px;                /* Decrease font size (adjust as needed) */
+    line-height: 1.8;               /* Adds space between lines (1.8 is a good value for readability) */
+}
+/* Image container styling */
+.custom-grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds space between rows */
+    max-width: 100%; /* Adjust width as necessary */
+    margin: 0 auto;
+}
+
+/* Each row of images */
+.custom-image-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Individual grid images */
+.custom-grid-image {
+    width: 100%;           /* Set width to 100% to make the image take the full width */
+    max-width: 250px;      /* Set a max-width to control how large the images can get */
+    height: auto;          /* Maintain aspect ratio */
+    margin-bottom: 15px;   /* Adds space below each image */
+    object-fit: contain;   /* Ensure the full image fits within its box */
+    border-radius: 8px;    /* Optional: Add rounded corners */
+}
+/* Add margin to bottom of the images container */
+.custom-grid-container {
+    margin-bottom: 50px;  /* Adds space between the image grid and the following content */
+}
+/* -------------------------------------------------------------------------------------------------------------------- */
+.animated-link {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .animated-link:hover {
+    transform: scale(0.9);
+  }
+  /* ---------------------------------------------------------------------------------------------------------------------------- */
+/* Address container */
+.contact.address {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Width for the address section */
+}
+
+/* Form container */
+.contact-form-container {
+    padding: 20px;
+    width: 200px;
+}
+
+/* Form styling */
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #5b5b5b;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+button[type="submit"] {
+    width: 40%;
+    padding: 10px;
+    background-color:#eeeeee;
+    color:#343434;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #eeeeee;
+}
+
+/* Error Styling */
+.error-message {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+input.error,
+textarea.error {
+    border: 1px solid red;
+}
+
+/* Optional: Styling for when input is focused (not required but enhances UX) */
+input:focus,
+textarea:focus {
+    border-color:#343434;
+    outline: none;
+}
+/* Style for the red asterisk */
+.required {
+    color: red;
+    font-weight: bold;
+}
+/* Remove blue underline for all links */
+a {
+    text-decoration: none;  /* Remove underline */
+}
+
+/* Apply styling specifically to the email link */
+.email-link {
+    color: #dd1f1f;  /* Red color */
+}
+
+.email-link:hover {
+    text-decoration: none;  /* Ensure no underline on hover */
+}
+/* Ensures the contact form container appears below the red section on the right side */
+.contact-form-container {
+    position: relative; /* Keep it in the flow of the document */
+    left: 50%; /* Moves the form container to the right side */
+    transform: translateX(50%); /* Centers it on the right side */
+    top: -200px; /* Moves the form upward by 200px */
+    width: 300px; /* Adjust the width of the contact form */
+    padding: 20px; /* Padding inside the form container */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow around the form */
+}
+.contact.address {
+    position: relative; /* Keeps the div in the normal flow, but allows for adjustments */
+    top: 90px; /* Moves the div downward */
+    left: 290px; /* Moves the div towards the right */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
